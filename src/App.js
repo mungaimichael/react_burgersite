@@ -1,24 +1,27 @@
 import React from "react";
-import Header from "./Components/Header";
-import {
-  BrowserRouter as Router,
-  Route,
-  Switch,
-} from "react-router-dom/cjs/react-router-dom.min";
-import Register from "./Components/Register";
+import Meals from "./Components/Meals";
 import Hero from "./Components/Hero";
-import SectionTwo from "./Components/SectionTwo";
-import TripPackage from "./Components/TripPackage";
+import one from "./Components/media/burgers/one.jpg";
+import two from "./Components/media/burgers/two.jpg";
+import three from "./Components/media/burgers/three.jpg";
+import Salads from "./Components/Salads";
 
 const App = () => {
   return (
-    <Router>
-      <Header />
+    <>
       <Hero />
-      <SectionTwo />
-      <TripPackage />
-      <Register />
-    </Router>
+      <Meals
+        one={one}
+        two={two}
+        three={three}
+        title1="meaty king"
+        title2="sir cheesealot"
+        title3="the regular one"
+        sectionTitle="must be the burger"
+        id="burgers"
+      />
+      <Salads />
+    </>
   );
 };
 
