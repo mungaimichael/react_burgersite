@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import Bars from "../NavBurger/Bars.svg";
 import Close from "../NavBurger/Close.svg";
+import DeskNav from "./DeskNav";
 const Header = () => {
   const [showMobile, setShowMobile] = useState(false);
 
@@ -30,11 +31,12 @@ const Header = () => {
       </h1>
       <nav className={`${showMobile ? "show" : ""}`}>
         <ul>
-          <li>super chilli</li>
-          <li>super cheesy</li>
+          <li>super burgers</li>
           <li>super salads</li>
+          <li>
+            <button>buy now</button>
+          </li>
         </ul>
-        <button>buy now</button>
       </nav>
       {showBurgerIcon ? (
         <div
@@ -45,11 +47,7 @@ const Header = () => {
           <img src={Close} id="close" alt="" />
         </div>
       ) : (
-        <ul>
-          <li>burgers</li>
-          <li>salads</li>
-          <li>cheesy</li>
-        </ul>
+        <DeskNav />
       )}
     </header>
   );

@@ -11,20 +11,31 @@ const Meals = ({
   id,
 }) => {
   return (
-    <div className="burger_meals" id={id}>
-      <h1>{sectionTitle}</h1>
-      <div className="meals">
-        <div className="one">
+    <div className="meals" id={id}>
+      <div className="sectionTitle">
+        <h1>{sectionTitle}</h1>
+      </div>
+      <div className="meal_card_container">
+        <div className="meal_card">
           <img src={one} alt="" />
-          <h2>{title1}</h2>
+          <div className="prod_des">
+            <h2>{title1}</h2>
+            <button>buy and taste</button>
+          </div>
         </div>
-        <div className="two">
+        <div className="meal_card">
           <img src={two} alt="" />
-          <h2>{title2}</h2>
+          <div className="prod_des">
+            <h2>{title2}</h2>
+            <button>buy and taste</button>
+          </div>
         </div>
-        <div className="three">
+        <div className="meal_card">
           <img src={three} alt="" />
-          <h2>{title3}</h2>
+          <div className="prod_des">
+            <h2>{title3}</h2>
+            <button>buy and taste</button>
+          </div>
         </div>
       </div>
     </div>

@@ -15,8 +15,8 @@ const App = () => {
         two={two}
         three={three}
         title1="meaty king"
-        title2="sir cheesealot"
-        title3="the regular one"
+        title2="chillybilly"
+        title3="regular one"
         sectionTitle="must be the burger"
         id="burgers"
       />

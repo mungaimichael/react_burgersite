@@ -16,6 +16,7 @@
 
 html {
   font-size: 15px;
+  scroll-behavior: smooth;
 }
 
 .burger_menu {
@@ -88,7 +89,7 @@ html {
 }
 
 .hero header nav ul {
-  height: 55%;
+  height: 40%;
   width: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -113,6 +114,8 @@ html {
   font-weight: 900;
   margin: 0.5rem 0;
   font-size: 2.6rem;
+  height: auto;
+  width: 100%;
 }
 
 .hero header nav ul li:hover {
@@ -120,9 +123,9 @@ html {
   cursor: pointer;
 }
 
-.hero header nav button {
+.hero header nav ul li button {
   height: 65px;
-  width: 80%;
+  width: 100%;
   margin: 0 auto;
   background: black;
   border: 0;
@@ -132,8 +135,44 @@ html {
   font-weight: 900;
 }
 
-.hero header nav button:hover {
+.hero header nav ul li button:hover {
   cursor: pointer;
+}
+
+.hero header ul.desknav {
+  height: 65px;
+  width: 40%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: absolute;
+  right: 3rem;
+  top: 0;
+  list-style: none;
+}
+
+.hero header ul.desknav li a {
+  text-decoration: none;
+  color: white;
+  font-family: var(--sec-font);
+  font-size: 1.2rem;
+  font-weight: 900;
+}
+
+.hero header ul.desknav li button {
+  height: 50px;
+  width: 130px;
+  color: white;
+  font-family: var(--sec-font);
+  font-size: 1.5rem;
+  font-weight: 900;
+  background: var(--prim-color);
+  border: 0;
 }
 
 .hero .burger {
@@ -217,14 +256,15 @@ html {
   top: 100px;
 }
 
-@media (max-width: 650px) {
+@media (min-width: 650px) {
   .hero .hero_content div {
     width: 100%;
   }
 }
 
 .hero .hero_content div h2 {
-  font-size: clamp(2.5rem, 4vw, 5rem);
+  font-size: clamp(3rem, 4vw, 5rem);
+  width: 50%;
   font-family: var(--sec-font);
   font-weight: 900;
   color: white;
@@ -254,14 +294,26 @@ html {
   background: var(--prim-color);
 }
 
+#salads button {
+  background: white;
+  color: black;
+  margin-top: 1rem;
+}
+
 #salads h1 {
   color: white;
   -webkit-text-decoration: 2px underline white;
           text-decoration: 2px underline white;
 }
 
-.burger_meals {
-  height: 100vh;
+.meals {
+  min-height: 100vh;
+  width: 100vw;
+  padding: 1rem calc((100vw - 1300px) / 2);
+}
+
+.meals .sectionTitle {
+  height: 80px;
   width: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -272,81 +324,79 @@ html {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
 }
 
-.burger_meals h1 {
-  margin: 1rem 0;
+.meals .sectionTitle h1 {
   font-family: var(--prim-font);
   font-weight: 900;
   color: white;
-  font-size: clamp(2rem, 4.5vw, 6rem);
-  -webkit-text-decoration: 3px underline var(--prim-color);
-          text-decoration: 3px underline var(--prim-color);
+  font-size: clamp(2rem, 4.2vw, 5rem);
+  -webkit-text-decoration: 5px underline var(--prim-color);
+          text-decoration: 5px underline var(--prim-color);
+}
+
+.meals .meal_card_container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  margin: 0 auto;
+}
+
+.meals .meal_card_container .meal_card {
+  margin: 2rem 2rem;
+  width: 300px;
+  font-family: var(--prim-font);
+  background: black;
+}
+
+.meals .meal_card_container .meal_card img {
+  height: 300px;
+  min-width: 300px;
+  max-width: 100%;
+  -webkit-filter: opacity(0.7);
+          filter: opacity(0.7);
+}
+
+.meals .meal_card_container .meal_card .prod_des {
   height: auto;
   width: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-}
-
-.burger_meals .meals {
-  height: 90%;
-  width: 100%;
-  display: -ms-grid;
-  display: grid;
-  -ms-grid-columns: 1fr;
-      grid-template-columns: 1fr;
-  -ms-grid-rows: (1fr)[3];
-      grid-template-rows: repeat(3, 1fr);
-  -webkit-text-decoration: 3px underline var(--prim-color);
-          text-decoration: 3px underline var(--prim-color);
-}
-
-.burger_meals .meals div {
-  background: black;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  height: 12rem;
-  width: 13rem;
-  margin: 0 auto;
-  position: relative;
+      -ms-flex-flow: column wrap;
+          flex-flow: column wrap;
 }
 
-.burger_meals .meals div h2 {
-  font-family: var(--prim-font);
-  position: absolute;
-  top: 85%;
-  left: 0%;
-  font-weight: 900;
+.meals .meal_card_container .meal_card .prod_des h2 {
+  font-size: clamp(2.5rem, 2vw, 3rem);
   color: white;
+  font-weight: 900;
 }
 
-.burger_meals .meals div img {
-  height: 100%;
+.meals .meal_card_container .meal_card .prod_des button {
+  height: auto;
   width: 100%;
-  -webkit-filter: opacity(0.6);
-          filter: opacity(0.6);
-  border: 1px solid var(--prim-color);
+  font-size: clamp(2rem, 2vw, 3rem);
+  background: var(--prim-color);
+  border: 0;
+  color: white;
+  text-transform: uppercase;
+  font-weight: 900;
+}
+
+.meals .meal_card_container .meal_card .prod_des button:hover {
+  cursor: pointer;
 }
 /*# sourceMappingURL=style.css.map */
